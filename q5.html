@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Cookie</title>
+
+</head>
+<body>
+    <h2>Get a Cookie</h2>
+    <button onclick="showUsernameCookie()">Get Username Cookie</button>
+
+
+    <script>
+        function getCookie(name) {
+            let cookies = document.cookie.split('; ');
+            for (let cookie of cookies) {
+                let [key, value] = cookie.split('=');
+                if (key === name) return value;
+            }
+            return null;
+        }
+
+        function showUsernameCookie() {
+            let username = getCookie("username");
+            alert(username ? "Username: " + username : "Cookie not found");
+        }
+    </script>
+</body>
+</html>

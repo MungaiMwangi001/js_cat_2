@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete a Cookie</title>
+    
+</head>
+<body>
+    <h2>Delete a Cookie</h2>
+    <button onclick="removeUsernameCookie()">Delete Username Cookie</button>
+
+    <script>
+        function deleteCookie(name) {
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
+        }
+
+        function removeUsernameCookie() {
+            deleteCookie("username");
+            alert("Username cookie deleted");
+        }
+    </script>
+</body>
+</html>
